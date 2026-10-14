@@ -1,0 +1,31 @@
+[package]
+name = "magpie"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.90"
+description = "Magpie: find logos, icons and stock photos, and convert SVG to transparent PNG"
+authors = ["Mike"]
+license = "MIT"
+repository = "https://github.com/mgwoolf/magpie"
+homepage = "https://github.com/mgwoolf/magpie"
+readme = "README.md"
+keywords = ["logo", "icons", "svg", "stock-photos", "egui"]
+categories = ["gui", "multimedia::images", "command-line-utilities"]
+
+[dependencies]
+arboard = { version = "3.6.1", default-features = false, features = ["image-data"] }
+directories = "6.0.0"
+eframe = { version = "0.33.3", default-features = false, features = ["default_fonts", "glow", "persistence", "wayland", "x11"] }
+image = { version = "0.25.10", default-features = false, features = ["jpeg", "png", "webp"] }
+keyring = { version = "3", features = ["apple-native", "windows-native", "sync-secret-service", "crypto-rust"] }
+reqwest = { version = "0.13.5", default-features = false, features = ["blocking", "json", "rustls", "query", "gzip"] }
+resvg = "0.48.1"
+rfd = "0.17.2"
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.154"
+
+[profile.release]
+opt-level = 3
+lto = true
+strip = true
+codegen-units = 1
