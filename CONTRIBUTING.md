@@ -45,6 +45,11 @@ Some guidelines:
 - New image sources must have terms that allow this kind of use and must not need a paid
   account. Show each result's license in the UI.
 
+## Developer docs
+
+Architecture, the UI design system, recipes for common changes, egui pitfalls and the roadmap are in
+[docs/](docs/README.md). AI coding agents should start with [AGENTS.md](AGENTS.md).
+
 ## Code layout
 
 | File                | What it does                                                         |
